@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 
 function App() {
@@ -19,7 +18,20 @@ function App() {
 
       </div>
       <div id='cards'>
+        <div className="card">
+          <h2>Missão</h2>
+          <p>Descrição do primeiro card.</p>
+        </div>
 
+        <div className="card">
+          <h2>Vissão</h2>
+          <p>Descrição do segundo card.</p>
+        </div>
+
+        <div className="card">
+          <h2>Valores</h2>
+          <p>Descrição do terceiro card.</p>
+        </div>
       </div>
       <div id='sobre'>
 
