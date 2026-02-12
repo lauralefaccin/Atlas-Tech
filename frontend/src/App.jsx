@@ -4,6 +4,7 @@ function App() {
 
   return (
     <>
+
       <header>
         <img src="" alt="Logo" />
         <nav>
@@ -14,9 +15,11 @@ function App() {
           </ul>
         </nav>
       </header>
+
       <div id='hero'>
 
       </div>
+
       <div id='cards'>
         <div className="card">
           <h2>Missão</h2>
@@ -24,7 +27,7 @@ function App() {
         </div>
 
         <div className="card">
-          <h2>Vissão</h2>
+          <h2>Visão</h2>
           <p>Descrição do segundo card.</p>
         </div>
 
@@ -33,15 +36,19 @@ function App() {
           <p>Descrição do terceiro card.</p>
         </div>
       </div>
+
       <div id='sobre'>
 
       </div>
+
       <div id='contato'>
 
       </div>
+
       <footer>
 
       </footer>
+
     </>
   )
 }
