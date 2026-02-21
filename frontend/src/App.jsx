@@ -29,14 +29,14 @@ function App() {
     {
       id: 4,
       nome: "Carlos Mior",
-      foto: "/fotosemfoto.jpg",
+      foto: "/cavalo.jpg",
       instagram: "https://www.instagram.com/carloseduardomior/",
       github: "https://github.com/Certoeerado"
     },
     {
       id: 5,
       nome: "Gustavo Gonçalves",
-      foto: "/fotosemfoto.jpg",
+      foto: "/nerd_legal.jpg",
       instagram: "https://www.instagram.com/guto.kg2008/",
       github: "https://github.com/Qlqr1"
     }
@@ -56,7 +56,7 @@ function App() {
     <>
 
       <header>
-        <img src="" alt="Logo" />
+        <img src="/logobranca.png" alt="Logo" id='logoprincipal' />
         <nav>
           <ul>
             <li><a href="#hero">Home</a></li>

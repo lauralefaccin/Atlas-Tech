@@ -1,36 +1,59 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-
-  --azul-escuro: #1C3F58;
-  --azul-verde: #1F6876;
-  --azul-claro: #2596BE;
-  --cinza-claro: #819AAD;
-  --azul-suave: #A1E7E2;
-  --preto: #000000;
-  --branco: #ffffff;
-
-  color: var(--azul-escuro);
-  background-color: var(--azul-verde);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* ================= RESET / BASE ================= */
+* {
+  box-sizing: border-box;
 }
 
-a:hover {
-  color: #535bf2;
-}
-
-body {
+html, body {
   margin: 0;
-  display: flex;
-  min-width: 320px;
+  padding: 0;
   min-height: 100vh;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+/* ================= PALETA ================= */
+:root {
+  --azul-escuro: #1C3F58;   /* navbar, títulos */
+  --azul-verde: #1F6876;    /* hover */
+  --azul-claro: #2596BE;    /* cards, botões */
+  --cinza-claro: #819AAD;   /* textos secundários */
+  --fundo-neutro: #F2F4F7;  /* fundo geral */
+  --branco: #FFFFFF;
+  --preto: #000000;
+}
+
+/* ================= FUNDO GERAL (FORÇADO) ================= */
+body,
+main,
+section,
+.container,
+.content {
+  background-color: var(--fundo-neutro);
+  color: var(--azul-escuro);
+}
+
+/* ================= NAVBAR ================= */
+header,
+nav,
+.navbar {
+  background-color: var(--azul-escuro);
+}
+
+header a,
+nav a,
+.navbar a {
+  color: var(--branco);
+  text-decoration: none;
+}
+
+header a:hover,
+nav a:hover,
+.navbar a:hover {
+  color: var(--azul-claro);
+}
+
+/* ================= TÍTULOS ================= */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--azul-escuro);
 }
 
 h1 {
@@ -38,38 +61,74 @@ h1 {
   line-height: 1.1;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+/* ================= TEXTOS ================= */
+p,
+span {
+  color: var(--cinza-claro);
 }
 
-button:hover {
-  border-color: #646cff;
+/* ================= CARDS (MISSÃO / VISÃO / VALORES) ================= */
+/* aqui está a correção principal: seletor mais específico */
+.card,
+.cards div,
+section .card,
+section .cards > div {
+  background-color: var(--azul-claro);
+  color: var(--branco);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+/* títulos dentro dos cards */
+.card h3,
+.cards div h3,
+section .card h3 {
+  color: var(--branco);
+}
+
+/* textos dentro dos cards */
+.card p,
+.cards div p,
+section .card p {
+  color: #EAF6FB;
+}
+
+/* ================= SEÇÃO DO TIME ================= */
+.team,
+.team-section,
+.section-team {
+  background-color: var(--fundo-neutro);
+}
+
+/* cards do time */
+.team-card,
+.team div {
+  background-color: var(--branco);
+  color: var(--azul-escuro);
+  border-radius: 14px;
+}
+
+/* ================= BOTÕES ================= */
+button,
+.btn,
+.arrow {
+  background-color: var(--azul-claro);
+  color: var(--branco);
+  border: none;
+  border-radius: 8px;
+  padding: 0.6em 1.2em;
+  cursor: pointer;
+  transition: background-color 0.25s, transform 0.15s;
+}
+
+button:hover,
+.btn:hover,
+.arrow:hover {
+  background-color: var(--azul-verde);
+  transform: translateY(-1px);
 }
 
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-
-  a:hover {
-    color: #747bff;
-  }
-
-  button {
-    background-color: #f9f9f9;
-  }
+  outline: 3px solid var(--azul-verde);
 }

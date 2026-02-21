@@ -25,7 +25,12 @@ header {
 
 /* Logo */
 header img {
-  height: 40px;
+  height: 100px;
+}
+
+header {
+  background-color: var(--azul-escuro);
+  padding: 1px 10px; /* aumenta a altura */
 }
 
 /* Menu */
@@ -177,9 +182,11 @@ nav a:hover {
   align-items: center;
   gap: 15px;
   background-color: transparent;
+
   padding: 20px;
   border-radius: 15px;
   box-shadow: none;
+  
   width: 200px;
   transition: all 0.3s ease;
 }
