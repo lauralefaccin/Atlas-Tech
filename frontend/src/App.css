@@ -30,7 +30,7 @@ header img {
 
 header {
   background-color: var(--azul-escuro);
-  padding: 1px 10px; /* aumenta a altura */
+  padding: 0px 10px; /* aumenta a altura */
 }
 
 /* Menu */
@@ -127,7 +127,7 @@ nav a:hover {
 
 #sobre h2 {
   margin-bottom: 40px;
-  font-size: 2.8rem;
+  font-size: 2.3rem;
   color: var(--azul-escuro);
   font-weight: 700;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
@@ -136,44 +136,59 @@ nav a:hover {
 }
 
 .carrossel-integrantes {
+  --largura-card-integrante: 300px;
+  --gap-card-integrante: 36px;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   gap: 40px;
+}
+
+.carrossel-viewport {
+  width: calc((var(--largura-card-integrante) * 3) + (var(--gap-card-integrante) * 2));
+  overflow: hidden;
 }
 
 .container-fotos {
   display: flex;
-  gap: 50px;
-  justify-content: center;
+  gap: var(--gap-card-integrante);
+  justify-content: flex-start;
   align-items: center;
+  will-change: transform;
 }
 
 .seta-esquerda,
 .seta-direita {
-  background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul-verde) 100%);
-  color: white;
-  border: none;
-  padding: 12px 20px;
+  background: transparent;
+  color: #000;
+  border: 2px solid transparent;
+  padding: 10px 18px;
   font-size: 32px;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
   width: auto;
   height: 55px;
-  box-shadow: 0 4px 15px rgba(31, 104, 118, 0.4);
+  box-shadow: none;
   font-weight: bold;
-  margin-top: 112px;
+  margin-top: 0;
 }
 
 .seta-esquerda:hover,
 .seta-direita:hover {
-  background: linear-gradient(135deg, var(--azul-verde) 0%, var(--azul-claro) 100%);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(31, 104, 118, 0.6);
+  transform: scale(1.04);
+}
+
+.seta-esquerda:active,
+.seta-direita:active,
+.seta-esquerda:focus-visible,
+.seta-direita:focus-visible {
+  background-color: var(--azul-claro);
+  border-color: var(--azul-claro);
+  outline: none;
 }
 
 .card-integrante {
@@ -183,12 +198,25 @@ nav a:hover {
   gap: 15px;
   background-color: transparent;
 
-  padding: 20px;
+  padding: 18px;
   border-radius: 15px;
   box-shadow: none;
+  border: 1px solid #000;
   
-  width: 200px;
+  width: var(--largura-card-integrante);
+  flex: 0 0 var(--largura-card-integrante);
+  box-sizing: border-box;
   transition: all 0.3s ease;
+}
+
+.quadro-foto {
+  width: 284px;
+  height: 284px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border-radius: 10px;
 }
 
 .card-integrante:hover {
@@ -197,16 +225,16 @@ nav a:hover {
 }
 
 .foto-integrante {
-  width: 220px;
-  height: 220px;
-  border-radius: 15px;
+  width: 260px;
+  height: 260px;
+  border-radius: 8px;
   object-fit: cover;
-  border: 4px solid var(--azul-claro);
-  transition: all 0.3s ease;
+  border: none;
+  transition: transform 0.6s ease, opacity 0.6s ease;
 }
 
 .card-integrante:hover .foto-integrante {
-  border-color: var(--azul-verde);
+  transform: scale(1.02);
 }
 
 .card-integrante h3 {
@@ -246,6 +274,17 @@ nav a:hover {
 }
 
 .btn-rede.instagram img {
-  width: 90px;
-  height: 90px;
+  width: 57px;
+  height: 57px;
+}
+
+@keyframes troca-integrantes {
+  0% {
+    opacity: 0;
+    transform: translateX(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

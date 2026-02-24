@@ -29,27 +29,65 @@ function App() {
     {
       id: 4,
       nome: "Carlos Mior",
-      foto: "/cavalo.jpg",
+      foto: "/foto_carlos.jpeg",
       instagram: "https://www.instagram.com/carloseduardomior/",
       github: "https://github.com/Certoeerado"
     },
     {
       id: 5,
       nome: "Gustavo Gonçalves",
-      foto: "/nerd_legal.jpg",
+      foto: "/foto_gustavo.jpeg",
       instagram: "https://www.instagram.com/guto.kg2008/",
       github: "https://github.com/Qlqr1"
     }
   ]
 
-  const integranteAtual = integrantes[indexIntegrante]
-
   const proximoIntegrante = () => {
-    setIndexIntegrante((prev) => (prev + 1) % integrantes.length)
+    if (isAnimating) return
+    setIsAnimating(true)
+    setTransitionAtiva(true)
+    setIndexIntegrante((prev) => prev + 1)
   }
 
   const integranteAnterior = () => {
-    setIndexIntegrante((prev) => (prev - 1 + integrantes.length) % integrantes.length)
+    if (isAnimating) return
+    setIsAnimating(true)
+    setTransitionAtiva(true)
+    setIndexIntegrante((prev) => prev - 1)
+  }
+
+  const [transitionAtiva, setTransitionAtiva] = useState(true)
+  const [isAnimating, setIsAnimating] = useState(false)
+
+  const totalIntegrantes = integrantes.length
+  const integrantesNoTrilho = [...integrantes, ...integrantes, ...integrantes]
+
+  const aoFinalizarTransicao = () => {
+    let novoIndex = null
+
+    if (indexIntegrante >= totalIntegrantes * 2) {
+      novoIndex = indexIntegrante - totalIntegrantes
+    }
+
+    if (indexIntegrante < totalIntegrantes) {
+      novoIndex = indexIntegrante + totalIntegrantes
+    }
+
+    if (novoIndex !== null) {
+      setTransitionAtiva(false)
+      setIndexIntegrante(novoIndex)
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setTransitionAtiva(true)
+          setIsAnimating(false)
+        })
+      })
+
+      return
+    }
+
+    setIsAnimating(false)
   }
 
   return (
@@ -91,26 +129,35 @@ function App() {
         <h2>Conheça Nosso Time</h2>
         <div className="carrossel-integrantes">
           <button className="seta-esquerda" onClick={integranteAnterior}>❮</button>
-          
-          <div className="container-fotos">
-            {[0, 1, 2].map((offset) => {
-              const idx = (indexIntegrante + offset) % integrantes.length
-              const integrante = integrantes[idx]
+
+          <div className="carrossel-viewport">
+            <div
+              className="container-fotos"
+              style={{
+                transform: `translateX(calc(-${indexIntegrante} * (var(--largura-card-integrante) + var(--gap-card-integrante))))`,
+                transition: transitionAtiva ? 'transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1)' : 'none'
+              }}
+              onTransitionEnd={aoFinalizarTransicao}
+            >
+              {integrantesNoTrilho.map((integrante, idx) => {
               return (
-                <div key={idx} className="card-integrante">
-                  <img src={integrante.foto} alt={integrante.nome} className="foto-integrante" />
+                <div key={`${integrante.id}-${idx}`} className="card-integrante">
+                  <div className="quadro-foto">
+                    <img src={integrante.foto} alt={integrante.nome} className="foto-integrante" />
+                  </div>
                   <h3>{integrante.nome}</h3>
                   <div className="redes-sociais">
                     <a href={integrante.instagram} target="_blank" rel="noopener noreferrer" className="btn-rede instagram" title="Instagram">
-                      <img src="/logo_instagram.webp" alt="Instagram" />
+                      <img src="/instagram.png" alt="Instagram" />
                     </a>
                     <a href={integrante.github} target="_blank" rel="noopener noreferrer" className="btn-rede github" title="GitHub">
-                      <img src="/logo_github.png" alt="GitHub" />
+                      <img src="/github.png" alt="GitHub" />
                     </a>
                   </div>
                 </div>
               )
-            })}
+              })}
+            </div>
           </div>
 
           <button className="seta-direita" onClick={proximoIntegrante}>❯</button>
