@@ -11,6 +11,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 1000;
 
   display: flex;
   justify-content: space-between;
@@ -147,6 +148,8 @@ nav a:hover {
 .carrossel-viewport {
   width: calc((var(--largura-card-integrante) * 3) + (var(--gap-card-integrante) * 2));
   overflow: hidden;
+  padding: 12px 0;
+  margin: -12px 0;
 }
 
 .container-fotos {
@@ -247,7 +250,7 @@ nav a:hover {
 .redes-sociais {
   display: flex;
   gap: 6px;
-  margin-top: 12px;
+  margin-top: -12px;
   justify-content: center;
 }
 
@@ -268,14 +271,14 @@ nav a:hover {
 }
 
 .btn-rede img {
-  width: 55px;
-  height: 55px;
+  width: 42px;
+  height: 42px;
   object-fit: contain;
 }
 
 .btn-rede.instagram img {
-  width: 57px;
-  height: 57px;
+  width: 44px;
+  height: 44px;
 }
 
 @keyframes troca-integrantes {
