@@ -649,3 +649,25 @@ nav a:hover {
     align-items: flex-start;
   }
 }
+
+#grid-hero{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 40px;
+  align-items: center;
+}
+#texto-hero{
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+#imagem-hero{
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+#descricao-hero{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+}

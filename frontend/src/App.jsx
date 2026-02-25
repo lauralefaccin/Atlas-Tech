@@ -136,7 +136,25 @@ function App() {
         </nav>
       </header>
 
-      <div id="hero"></div>
+      <div id="hero">
+        <div id="grid-hero">
+          <div id="texto-hero">
+            <h2>Transforme seu negócio com <span>software de ponta</span></h2>
+            <p>Descubra ferramentas poderosas que impulsionam a produtividade, automatizam processos e elevam seus resultados para o próximo nível.</p>
+            <div id="descricao-hero">
+              <p className="descricao-azul-hero">50k+</p>
+              <p className="descricao-azul-hero">98%</p>
+              <p className="descricao-azul-hero">4.9/5.0</p>
+              <p>Clientes Ativos</p>
+              <p>Satisfação</p>
+              <p>Avaliação</p>
+            </div>
+          </div>
+          <div id="imagem-hero">
+
+          </div>
+        </div>
+      </div>
 
       {/* ================= CARDS ================= */}
       <div id="cards">
