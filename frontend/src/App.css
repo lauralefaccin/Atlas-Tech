@@ -671,3 +671,148 @@ nav a:hover {
   grid-template-rows: 1fr 1fr;
   gap: 20px;
 }
+
+
+ /* ================= PRODUTOS ================= */
+
+#produtos {
+  margin-top: 100px;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.tag-topo {
+  display: inline-block;
+  background-color: #e6f0ff;
+  color: #1f5fbf;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  margin-bottom: 15px;
+}
+
+#produtos h2 {
+  font-size: 2.4rem;
+  color: var(--azul-escuro);
+  margin-bottom: 10px;
+}
+
+.subtitulo-produtos {
+  max-width: 650px;
+  margin: 0 auto 60px auto;
+  color: #6b7280;
+}
+
+/* GRID */
+.grid-produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* CARD */
+.card-produto {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  text-align: left;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-produto:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+}
+
+.card-produto img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* BADGE */
+.badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #22c55e;
+  color: white;
+  font-size: 0.75rem;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.badge.azul {
+  background-color: #1f5fbf;
+}
+
+/* CONTEÚDO */
+.conteudo-produto {
+  padding: 24px;
+}
+
+.categoria {
+  font-size: 0.8rem;
+  color: #1f5fbf;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.conteudo-produto h3 {
+  margin: 10px 0;
+  color: var(--azul-escuro);
+}
+
+.conteudo-produto p {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+/* AVALIAÇÃO */
+.avaliacao {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.avaliacao span {
+  color: #6b7280;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+/* RODAPÉ */
+.rodape-produto {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rodape-produto strong {
+  font-size: 1.4rem;
+  color: #1f5fbf;
+}
+
+.rodape-produto span {
+  color: #6b7280;
+  margin-right: auto;
+}
+
+.rodape-produto button {
+  background-color: #1f5fbf;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.rodape-produto button:hover {
+  background-color: #174ea6;
+}

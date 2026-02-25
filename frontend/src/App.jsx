@@ -174,6 +174,98 @@ function App() {
         </div>
       </div>
 
+
+
+
+{/* ================= PRODUTOS ================= */}
+<section id="produtos">
+  <span className="tag-topo">Nossos produtos</span>
+  <h2>Soluções que Impulsionam Resultados</h2>
+  <p className="subtitulo-produtos">
+    Escolha entre nossas ferramentas premium e leve seu negócio ao próximo nível.
+  </p>
+
+  <div className="grid-produtos">
+
+    {/* CARD 1 */}
+    <div className="card-produto">
+      <div className="badge">Mais vendido</div>
+      <img src="/analytics.jpg" alt="Analytics Pro" />
+
+      <div className="conteudo-produto">
+        <span className="categoria">ANÁLISES</span>
+        <h3>Analytics Pro</h3>
+        <p>
+          Plataforma completa de análise de dados com dashboards interativos
+          e relatórios em tempo real.
+        </p>
+
+        <div className="avaliacao">
+          ⭐ 4.8 <span>(2.341 avaliações)</span>
+        </div>
+
+        <div className="rodape-produto">
+          <strong>R$ 299</strong>
+          <span>/mês</span>
+          <button>Comprar</button>
+        </div>
+      </div>
+    </div>
+
+    {/* CARD 2 */}
+    <div className="card-produto">
+      <div className="badge azul">Empresa</div>
+      <img src="/gerenciador de nuvens.jpeg" alt="Gerenciador de Nuvem" />
+
+      <div className="conteudo-produto">
+        <span className="categoria">NUVEM</span>
+        <h3>Gerenciador de Nuvem</h3>
+        <p>
+          Gerencie toda sua infraestrutura em nuvem em um único lugar com segurança máxima.
+        </p>
+
+        <div className="avaliacao">
+          ⭐ 4.9 <span>(1.876 avaliações)</span>
+        </div>
+
+        <div className="rodape-produto">
+          <strong>R$ 499</strong>
+          <span>/mês</span>
+          <button>Comprar</button>
+        </div>
+      </div>
+    </div>
+
+    {/* CARD 3 */}
+    <div className="card-produto">
+      <div className="badge azul">Novo</div>
+      <img src="/suites_DevOps.jpeg" alt="Suíte DevOps" />
+
+      <div className="conteudo-produto">
+
+        <span className="categoria">DEVOPS</span>
+        <h3>Suíte DevOps</h3>
+        <p>
+          Conjunto completo de ferramentas para automatizar implantação,
+          testes e monitoramento.
+        </p>
+
+        <div className="avaliacao">
+          ⭐ 4.7 <span>(1.532 avaliações)</span>
+        </div>
+
+        <div className="rodape-produto">
+          <strong>R$ 399</strong>
+          <span>/mês</span>
+          <button>Comprar</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
       {/* ================= TIME ================= */}
       <div id="sobre">
         <h2>Conheça Nosso Time</h2>
