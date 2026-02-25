@@ -1,7 +1,7 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
   text-align: center;
 }
 
@@ -479,13 +479,21 @@ nav a:hover {
   text-align: left;
 }
 
-.footer-top > .footer-col:nth-child(2),
+.footer-top > .footer-col:nth-child(2) {
+  justify-self: start;
+}
+
 .footer-top > .footer-col:nth-child(3) {
   justify-self: center;
+  text-align: left;
+}
+
+.footer-top > .footer-col:nth-child(4) {
+  justify-self: end;
 }
 
 .footer-col-newsletter {
-  margin-top: 20px;
+  display: block;
 }
 
 .footer-col h3 {
@@ -502,7 +510,7 @@ nav a:hover {
 }
 
 .footer-logo {
-  width: 88px;
+  width: 68px;
   height: auto;
   margin-bottom: 14px;
 }
@@ -555,10 +563,12 @@ nav a:hover {
 
 .footer-newsletter {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  border-bottom: 1px solid #cfd9e6;
+  align-items: flex-start;
+  gap: 4px;
+  border-bottom: none;
+  margin-top: 8px;
   padding-bottom: 10px;
+  width: 100%;
 }
 
 .footer-newsletter input {
@@ -578,6 +588,7 @@ nav a:hover {
   width: 44px;
   height: 44px;
   min-width: 44px;
+  margin-top: 70px;
   border-radius: 11px;
   padding: 0;
   background-color: #176ed0;
@@ -594,7 +605,8 @@ nav a:hover {
 
 .footer-bottom {
   margin-top: 18px;
-  padding-top: 12px;
+  padding-top: 16px;
+  padding-bottom: 10px;
   border-top: 1px solid #c7d2df;
   display: flex;
   align-items: center;

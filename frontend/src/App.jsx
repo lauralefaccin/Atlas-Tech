@@ -41,6 +41,10 @@ function App() {
   const [transitionAtiva, setTransitionAtiva] = useState(true)
   const [isAnimating, setIsAnimating] = useState(false)
 
+  const irParaHeader = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   const integrantes = [
     {
       id: 1,
@@ -403,18 +407,12 @@ function App() {
         <div className="footer-top">
           <div className="footer-col footer-col-brand">
             <img src="/atlas_tech-Logo.png" alt="Atlas Tech" className="footer-logo" />
-            <p>Transformando negócios através de software inovador desde 2020.</p>
+            <p>Transformando negócios através de software inovador desde 2026.</p>
 
             <div className="footer-social" aria-label="Redes sociais">
               <a href="#" aria-label="Facebook">
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                   <path d="M14 8h2V5h-2c-2.2 0-4 1.8-4 4v2H8v3h2v5h3v-5h3l1-3h-4V9c0-.6.4-1 1-1Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
-                </svg>
-              </a>
-
-              <a href="#" aria-label="Twitter">
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M20 7.5a5.7 5.7 0 0 1-1.7.5A3 3 0 0 0 19.6 6a5.9 5.9 0 0 1-1.9.8A3 3 0 0 0 12.6 9v.7A8.5 8.5 0 0 1 6 6.6a3 3 0 0 0 .9 4A3 3 0 0 1 5.7 10v.1a3 3 0 0 0 2.4 2.9A3.1 3.1 0 0 1 7 13a3 3 0 0 0 2.8 2.1A6.1 6.1 0 0 1 5 16.4 8.6 8.6 0 0 0 9.7 18c5.6 0 8.7-4.7 8.7-8.7v-.4A6.3 6.3 0 0 0 20 7.5Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
                 </svg>
               </a>
 
@@ -456,11 +454,14 @@ function App() {
           </div>
 
           <div className="footer-col footer-col-newsletter">
+            <h3>Newsletter</h3>
+            <p>Receba novidades e ofertas exclusivas.</p>
             <form className="footer-newsletter" onSubmit={(event) => event.preventDefault()}>
               <input type="email" placeholder="atlastech@gmail.com" aria-label="Seu email" />
-              <button type="submit" aria-label="Enviar">
+              <button type="button" aria-label="Voltar ao topo" onClick={irParaHeader}>
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M4 7.5h16v9H4v-9Zm0 0 8 5 8-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M12 18V6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M7 11l5-5 5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </button>
             </form>
