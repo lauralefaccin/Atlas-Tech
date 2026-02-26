@@ -41,6 +41,8 @@ function App() {
   const [transitionAtiva, setTransitionAtiva] = useState(true)
   const [isAnimating, setIsAnimating] = useState(false)
 
+  const [menuAberto, setMenuAberto] = useState(false)
+
   const irParaHeader = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
@@ -131,12 +133,15 @@ function App() {
     <>
       <header>
         <img src="/logo_branca.png" alt="Logo" id="logoprincipal" />
+        <button className="menu-toggle" onClick={() => setMenuAberto(!menuAberto)} aria-label="Menu">
+          {menuAberto ? '✕' : '☰'}
+        </button>
         <nav>
-          <ul>
-            <li><a href="#produtos">Produtos</a></li>
-            <li><a href="#recursos">Recursos</a></li>
-            <li><a href="#precos">Preços</a></li>
-            <li><a href="#contato">Contatos</a></li>
+          <ul className={menuAberto ? 'aberto' : ''}>
+            <li><a href="#produtos" onClick={() => setMenuAberto(false)}>Produtos</a></li>
+            <li><a href="#recursos" onClick={() => setMenuAberto(false)}>Recursos</a></li>
+            <li><a href="#precos" onClick={() => setMenuAberto(false)}>Preços</a></li>
+            <li><a href="#contato" onClick={() => setMenuAberto(false)}>Contatos</a></li>
           </ul>
         </nav>
       </header>
@@ -161,23 +166,7 @@ function App() {
         </div>
       </div>
 
-      {/* ================= CARDS ================= */}
-      <div id="cards">
-        <div className="card">
-          <h2>Missão</h2>
-          <p>Descrição do primeiro card.</p>
-        </div>
 
-        <div className="card">
-          <h2>Visão</h2>
-          <p>Descrição do segundo card.</p>
-        </div>
-
-        <div className="card">
-          <h2>Valores</h2>
-          <p>Descrição do terceiro card.</p>
-        </div>
-      </div>
 
 
 

@@ -1,5 +1,6 @@
 body {
-  background-color: #b2e6f0;
+  background-color: #f0f7ff;
+  overflow-x: hidden;
 }
 
 #root {
@@ -21,7 +22,7 @@ header {
   justify-content: space-between;
   align-items: center;
 
-  padding: 15px 40px;
+  padding: 3.5px 21px; /* reduzido em 30% */
   background-color: #ffffff;
   color: var(--branco);
 
@@ -30,12 +31,7 @@ header {
 
 /* Logo */
 header img {
-  height: 80px;
-}
-
-header {
-  background-color: white;
-  padding: 0px 30px; /* aumenta a altura */
+  height: 64px; /* aumenta um pouco a logo sem alterar a altura do header */
 }
 
 /* Menu */
@@ -46,6 +42,18 @@ nav ul {
   margin: 0;
   padding-right: 8em;
   background-color: white;
+}
+
+/* Botão hamburguer (oculto por padrão) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #000;
+  padding: 0;
+  box-shadow: none;
 }
 
 nav a {
@@ -299,6 +307,7 @@ nav a:hover {
 
 
 /* FILIPE ------------------------------------------ */
+
 
 /* ================= RECURSOS ================= */
 
@@ -689,6 +698,168 @@ nav a:hover {
   gap: 20px;
 }
 
+/* ================= RESPONSIVIDADE ================= */
+
+@media (max-width: 768px) {
+
+  /* HEADER */
+  header {
+    flex-wrap: wrap;
+    padding: 10px 16px;
+    position: relative;
+  }
+
+  header img {
+    height: 48px;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    padding: 12px 0;
+    background-color: white;
+  }
+
+  nav ul.aberto {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  /* HERO */
+  #hero {
+    margin-top: 20px;
+    padding: 0 16px;
+  }
+
+  #grid-hero {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  #texto-hero {
+    grid-column: 1;
+    grid-row: 1;
+    text-align: center;
+  }
+
+  #imagem-hero {
+    display: none;
+  }
+
+  #texto-hero h2 {
+    font-size: 1.8rem;
+  }
+
+  #descricao-hero {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    font-size: 0.9rem;
+  }
+
+  /* PRODUTOS */
+  #produtos {
+    padding: 40px 16px;
+    margin-top: 40px;
+  }
+
+  #produtos h2 {
+    font-size: 1.8rem;
+  }
+
+  .grid-produtos {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 0 8px;
+  }
+
+  /* CARROSSEL */
+  .carrossel-integrantes {
+    gap: 10px;
+  }
+
+  .carrossel-viewport {
+    width: var(--largura-card-integrante);
+  }
+
+  .seta-esquerda,
+  .seta-direita {
+    font-size: 22px;
+    padding: 6px 10px;
+  }
+
+  /* RECURSOS */
+  #recursos {
+    padding: 40px 16px;
+    margin-top: 40px;
+  }
+
+  #recursos h2 {
+    font-size: 1.8rem;
+  }
+
+  .grid-recursos {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  /* STATS */
+  .stats {
+    gap: 24px;
+    padding: 40px 16px;
+  }
+
+  /* FOOTER */
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .footer-top > .footer-col:nth-child(3) {
+    justify-self: start;
+  }
+
+  .footer-top > .footer-col:nth-child(4) {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 480px) {
+
+  #descricao-hero {
+    grid-template-columns: 1fr 1fr 1fr;
+    font-size: 0.8rem;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .footer-bottom-links {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  #sobre h2 {
+    font-size: 1.6rem;
+  }
+
+  .stat-item span,
+  .stat-static {
+    font-size: 2rem;
+  }
+}
+
 
  /* ================= PRODUTOS ================= */
 
@@ -696,6 +867,9 @@ nav a:hover {
   margin-top: 100px;
   padding: 80px 20px;
   text-align: center;
+  background-color: #ffffff;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
 }
 
 .tag-topo {
