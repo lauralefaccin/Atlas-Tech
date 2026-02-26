@@ -1,3 +1,7 @@
+body {
+  background-color: #b2e6f0;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -18,7 +22,7 @@ header {
   align-items: center;
 
   padding: 15px 40px;
-  background-color: var(--azul-escuro);
+  background-color: #ffffff;
   color: var(--branco);
 
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -26,12 +30,12 @@ header {
 
 /* Logo */
 header img {
-  height: 100px;
+  height: 80px;
 }
 
 header {
-  background-color: var(--azul-escuro);
-  padding: 0px 10px; /* aumenta a altura */
+  background-color: white;
+  padding: 0px 30px; /* aumenta a altura */
 }
 
 /* Menu */
@@ -40,12 +44,13 @@ nav ul {
   list-style: none;
   gap: 25px;
   margin: 0;
-  padding-right: 5em;
+  padding-right: 8em;
+  background-color: white;
 }
 
 nav a {
   text-decoration: none;
-  color: white;
+  color: black;
   font-weight: 500;
 }
 

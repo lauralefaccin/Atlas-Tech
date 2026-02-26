@@ -130,11 +130,12 @@ function App() {
   return (
     <>
       <header>
-        <img src="/logobranca.png" alt="Logo" id="logoprincipal" />
+        <img src="/logo_branca.png" alt="Logo" id="logoprincipal" />
         <nav>
           <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#cards">Sobre nós</a></li>
+            <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#recursos">Recursos</a></li>
+            <li><a href="#precos">Preços</a></li>
             <li><a href="#contato">Contatos</a></li>
           </ul>
         </nav>
