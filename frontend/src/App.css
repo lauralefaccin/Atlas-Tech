@@ -66,9 +66,54 @@ nav a:hover {
   opacity: 0.7;
 }
 
-/* Espaço para header fixo */
 #hero {
   margin-top: 80px;
+  background: linear-gradient(to bottom right, #f8fafc, #eff6ff, #f1f5f9);
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+}
+
+#texto-hero {
+  text-align: center;
+  justify-self: left;
+  max-width: 40vw;
+}
+
+#texto-hero h2 {
+  font-size: 3rem;
+  color: var(--azul-escuro);
+  margin-bottom: 10px;
+}
+
+#descricao-hero {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.descricao-azul-hero {
+  color: #174ea6;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+#texto-destaque-hero {
+  color: #174ea6;
+  font-weight: 700;
+}
+
+#imagem-hero {
+  justify-self: right;
+  max-width: 40vw;
+}
+
+#imagem-hero img {
+  width: 400px;
+  height: 150px;
+  border-radius: 12px;
+  object-fit: cover;
 }
 
 /* ✅ LOGO (mantido do Vite) */
@@ -676,28 +721,6 @@ nav a:hover {
   }
 }
 
-#grid-hero{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  gap: 40px;
-  align-items: center;
-}
-#texto-hero{
-  grid-column: 1/2;
-  grid-row: 1/2;
-}
-#imagem-hero{
-  grid-column: 2/3;
-  grid-row: 1/2;
-}
-#descricao-hero{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 20px;
-}
-
 /* ================= RESPONSIVIDADE ================= */
 
 @media (max-width: 768px) {
@@ -728,37 +751,6 @@ nav a:hover {
 
   .menu-toggle {
     display: block;
-  }
-
-  /* HERO */
-  #hero {
-    margin-top: 20px;
-    padding: 0 16px;
-  }
-
-  #grid-hero {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  #texto-hero {
-    grid-column: 1;
-    grid-row: 1;
-    text-align: center;
-  }
-
-  #imagem-hero {
-    display: none;
-  }
-
-  #texto-hero h2 {
-    font-size: 1.8rem;
-  }
-
-  #descricao-hero {
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
-    font-size: 0.9rem;
   }
 
   /* PRODUTOS */
@@ -826,7 +818,7 @@ nav a:hover {
   .footer-top > .footer-col:nth-child(4) {
     justify-self: start;
   }
-}
+} */
 
 @media (max-width: 480px) {
 
