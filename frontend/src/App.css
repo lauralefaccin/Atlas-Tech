@@ -1,6 +1,10 @@
 body {
-  background-color: #f0f7ff;
-  overflow-x: hidden;
+  background: linear-gradient(
+    160deg,
+    #d4e6fb 0%,
+    #d9e8fc 45%,
+    #e4f0ff 100%
+  );
 }
 
 #root {
@@ -67,8 +71,8 @@ nav a:hover {
 }
 
 #hero {
-  margin-top: 80px;
-  background: linear-gradient(to bottom right, #f8fafc, #eff6ff, #f1f5f9);
+  margin-top: 150px;
+  background: transparent;
   display: flex;
   justify-content: center;
   gap: 80px;
@@ -89,8 +93,30 @@ nav a:hover {
 #descricao-hero {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  margin-top: 20px;
+  gap: 48px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+/* item individual */
+#descricao-hero .stat-item {
+  text-align: center;
+  min-width: 120px;
+}
+
+/* número grande (tipo imagem 3) */
+#descricao-hero .stat-item h3 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #1f5fbf;
+  margin: 0;
+}
+
+/* label embaixo */
+#descricao-hero .stat-item p {
+  margin-top: 6px;
+  font-size: 0.95rem;
+  color: #6b7280;
 }
 
 .descricao-azul-hero {
@@ -110,8 +136,9 @@ nav a:hover {
 }
 
 #imagem-hero img {
-  width: 400px;
-  height: 150px;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
   border-radius: 12px;
   object-fit: cover;
 }
@@ -998,4 +1025,66 @@ nav a:hover {
 
 .rodape-produto button:hover {
   background-color: #174ea6;
+}
+
+/* ================= soluções/ bloco azul ================= */
+
+
+#cta {
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.cta-container {
+  background: linear-gradient(135deg, #1f5fbf, #1554a3);
+  color: white;
+  text-align: center;
+  padding: 60px 40px;
+  border-radius: 16px;
+  max-width: 1100px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* ícone */
+.cta-icon {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.cta-icon img {
+  filter: brightness(0) invert(1);
+}
+
+/* título */
+.cta-container h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  color: white;
+}
+
+/* descrição */
+.cta-container p {
+  color: #e5e7eb;
+  max-width: 600px;
+  margin: 0 auto 28px auto;
+  line-height: 1.6;
+}
+
+/* botão */
+.cta-button {
+  background: #e5e7eb;
+  color: #1f2937;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  background: white;
 }

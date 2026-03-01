@@ -151,103 +151,127 @@ function App() {
           <h2>Transforme seu negócio com <span id='texto-destaque-hero'>software de ponta</span></h2>
           <p>Descubra ferramentas poderosas que impulsionam a produtividade, automatizam processos e elevam seus resultados para o próximo nível.</p>
           <div id="descricao-hero">
-            <p>Clientes ativos: <span className="descricao-azul-hero">50k+</span></p>
-            <p>Taxa de retenção: <span className="descricao-azul-hero">98%</span></p>
-            <p>Avaliação: <span className="descricao-azul-hero">4.9/5.0</span></p>
+            <Stat numero={50} sufixo="k+" label="Clientes Ativos" />
+            <Stat numero={98} sufixo="%" label="Satisfação" />
+            <Stat numero={4.9} sufixo="/5" label="Avaliação" />
           </div>
         </div>
         <div id="imagem-hero">
-          <img src="/foto_gustavo.jpg" alt="Imagem de destaque" />
+          <img src="/caraprogramando.jpg" alt="Imagem de destaque" />
         </div>
       </div>
 
-{/* ================= PRODUTOS ================= */}
-<section id="produtos">
-  <span className="tag-topo">Nossos produtos</span>
-  <h2>Soluções que Impulsionam Resultados</h2>
-  <p className="subtitulo-produtos">
-    Escolha entre nossas ferramentas premium e leve seu negócio ao próximo nível.
-  </p>
-
-  <div className="grid-produtos">
-
-    {/* CARD 1 */}
-    <div className="card-produto">
-      <div className="badge">Mais vendido</div>
-      <img src="/analytics.jpg" alt="Analytics Pro" />
-
-      <div className="conteudo-produto">
-        <span className="categoria">ANÁLISES</span>
-        <h3>Analytics Pro</h3>
-        <p>
-          Plataforma completa de análise de dados com dashboards interativos
-          e relatórios em tempo real.
+      {/* ================= PRODUTOS ================= */}
+      <section id="produtos">
+        <span className="tag-topo">Nossos produtos</span>
+        <h2>Soluções que Impulsionam Resultados</h2>
+        <p className="subtitulo-produtos">
+          Escolha entre nossas ferramentas premium e leve seu negócio ao próximo nível.
         </p>
 
-        <div className="avaliacao">
-          ⭐ 4.8 <span>(2.341 avaliações)</span>
+        <div className="grid-produtos">
+
+          {/* CARD 1 */}
+          <div className="card-produto">
+            <div className="badge">Mais vendido</div>
+            <img src="/analytics.jpg" alt="Analytics Pro" />
+
+            <div className="conteudo-produto">
+              <span className="categoria">ANÁLISES</span>
+              <h3>Analytics Pro</h3>
+              <p>
+                Plataforma completa de análise de dados com dashboards interativos
+                e relatórios em tempo real.
+              </p>
+
+              <div className="avaliacao">
+                ⭐ 4.8 <span>(2.341 avaliações)</span>
+              </div>
+
+              <div className="rodape-produto">
+                <strong>R$ 299</strong>
+                <span>/mês</span>
+                <button>Comprar</button>
+              </div>
+            </div>
+          </div>
+
+          {/* CARD 2 */}
+          <div className="card-produto">
+            <div className="badge azul">Empresa</div>
+            <img src="/gerenciador de nuvens.jpeg" alt="Gerenciador de Nuvem" />
+
+            <div className="conteudo-produto">
+              <span className="categoria">NUVEM</span>
+              <h3>Gerenciador de Nuvem</h3>
+              <p>
+                Gerencie toda sua infraestrutura em nuvem em um único lugar com segurança máxima.
+              </p>
+
+              <div className="avaliacao">
+                ⭐ 4.9 <span>(1.876 avaliações)</span>
+              </div>
+
+              <div className="rodape-produto">
+                <strong>R$ 499</strong>
+                <span>/mês</span>
+                <button>Comprar</button>
+              </div>
+            </div>
+          </div>
+
+          {/* CARD 3 */}
+          <div className="card-produto">
+            <div className="badge azul">Novo</div>
+            <img src="/suites_DevOps.jpeg" alt="Suíte DevOps" />
+
+            <div className="conteudo-produto">
+
+              <span className="categoria">DEVOPS</span>
+              <h3>Suíte DevOps</h3>
+              <p>
+                Conjunto completo de ferramentas para automatizar implantação,
+                testes e monitoramento.
+              </p>
+
+              <div className="avaliacao">
+                ⭐ 4.7 <span>(1.532 avaliações)</span>
+              </div>
+
+              <div className="rodape-produto">
+                <strong>R$ 399</strong>
+                <span>/mês</span>
+                <button>Comprar</button>
+              </div>
+            </div>
+          </div>
+
         </div>
+      </section>
 
-        <div className="rodape-produto">
-          <strong>R$ 299</strong>
-          <span>/mês</span>
-          <button>Comprar</button>
+
+      {/* ================= solução, bloco azul ================= */}
+
+      <section id="cta">
+        <div className="cta-container">
+          <div className="cta-icon">  
+            <img src='seta_cima.svg' alt="Ícone de crescimento" />
+          </div>
+
+          <h2>Procurando uma solução customizada?</h2>
+
+          <p>
+            Nossa equipe pode desenvolver software sob medida para atender suas
+            necessidades específicas.
+          </p>
+
+          <button className="cta-button">
+            Falar com Especialista
+          </button>
         </div>
-      </div>
-    </div>
+      </section>
 
-    {/* CARD 2 */}
-    <div className="card-produto">
-      <div className="badge azul">Empresa</div>
-      <img src="/gerenciador de nuvens.jpeg" alt="Gerenciador de Nuvem" />
 
-      <div className="conteudo-produto">
-        <span className="categoria">NUVEM</span>
-        <h3>Gerenciador de Nuvem</h3>
-        <p>
-          Gerencie toda sua infraestrutura em nuvem em um único lugar com segurança máxima.
-        </p>
-
-        <div className="avaliacao">
-          ⭐ 4.9 <span>(1.876 avaliações)</span>
-        </div>
-
-        <div className="rodape-produto">
-          <strong>R$ 499</strong>
-          <span>/mês</span>
-          <button>Comprar</button>
-        </div>
-      </div>
-    </div>
-
-    {/* CARD 3 */}
-    <div className="card-produto">
-      <div className="badge azul">Novo</div>
-      <img src="/suites_DevOps.jpeg" alt="Suíte DevOps" />
-
-      <div className="conteudo-produto">
-
-        <span className="categoria">DEVOPS</span>
-        <h3>Suíte DevOps</h3>
-        <p>
-          Conjunto completo de ferramentas para automatizar implantação,
-          testes e monitoramento.
-        </p>
-
-        <div className="avaliacao">
-          ⭐ 4.7 <span>(1.532 avaliações)</span>
-        </div>
-
-        <div className="rodape-produto">
-          <strong>R$ 399</strong>
-          <span>/mês</span>
-          <button>Comprar</button>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
 
 
       {/* ================= TIME ================= */}
