@@ -148,8 +148,10 @@ function App() {
 
       <div id="hero">
         <div id="texto-hero">
-          <h2>Transforme seu negócio com <span id='texto-destaque-hero'>software de ponta</span></h2>
+          <span id="badge-hero">🚀 Soluções em Software</span>
+          <h2>Transforme seu negócio<br />com <span id='texto-destaque-hero'>software de ponta</span></h2>
           <p>Descubra ferramentas poderosas que impulsionam a produtividade, automatizam processos e elevam seus resultados para o próximo nível.</p>
+          
           <div id="descricao-hero">
             <Stat numero={50} sufixo="k+" label="Clientes Ativos" />
             <Stat numero={98} sufixo="%" label="Satisfação" />
@@ -274,49 +276,6 @@ function App() {
 
 
 
-      {/* ================= TIME ================= */}
-      <div id="sobre">
-        <h2>Conheça Nosso Time</h2>
-        <div className="carrossel-integrantes">
-          <button className="seta-esquerda" onClick={integranteAnterior}>❮</button>
-
-          <div className="carrossel-viewport">
-            <div
-              className="container-fotos"
-              style={{
-                transform: `translateX(calc(-${indexIntegrante} * (var(--largura-card-integrante) + var(--gap-card-integrante))))`,
-                transition: transitionAtiva
-                  ? 'transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1)'
-                  : 'none'
-              }}
-              onTransitionEnd={aoFinalizarTransicao}
-            >
-              {integrantesNoTrilho.map((integrante, idx) => (
-                <div key={`${integrante.id}-${idx}`} className="card-integrante">
-                  <div className="quadro-foto">
-                    <img src={integrante.foto} alt={integrante.nome} className="foto-integrante" />
-                  </div>
-                  <h3>{integrante.nome}</h3>
-
-                  <div className="redes-sociais">
-                    <a href={integrante.instagram} target="_blank" rel="noopener noreferrer" className="btn-rede instagram">
-                      <img src="/instagram.png" alt="Instagram" />
-                    </a>
-                    <a href={integrante.github} target="_blank" rel="noopener noreferrer" className="btn-rede github">
-                      <img src="/github.png" alt="GitHub" />
-                    </a>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <button className="seta-direita" onClick={proximoIntegrante}>❯</button>
-        </div>
-      </div>
-
-
-
       {/* ================= RECURSOS ================= */}
       <section id="recursos">
         <h2>Recursos que Fazem a Diferença</h2>
@@ -404,6 +363,50 @@ function App() {
 
 
       </section>
+
+
+      {/* ================= TIME ================= */}
+      <div id="sobre-wrapper">
+        <div id="sobre">
+          <h2>Conheça Nosso Time</h2>
+          <div className="carrossel-integrantes">
+            <button className="seta-esquerda" onClick={integranteAnterior}>❮</button>
+
+            <div className="carrossel-viewport">
+              <div
+                className="container-fotos"
+                style={{
+                  transform: `translateX(calc(-${indexIntegrante} * (var(--largura-card-integrante) + var(--gap-card-integrante))))`,
+                  transition: transitionAtiva
+                    ? 'transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1)'
+                    : 'none'
+                }}
+                onTransitionEnd={aoFinalizarTransicao}
+              >
+                {integrantesNoTrilho.map((integrante, idx) => (
+                  <div key={`${integrante.id}-${idx}`} className="card-integrante">
+                    <div className="quadro-foto">
+                      <img src={integrante.foto} alt={integrante.nome} className="foto-integrante" />
+                    </div>
+                    <h3>{integrante.nome}</h3>
+
+                    <div className="redes-sociais">
+                      <a href={integrante.instagram} target="_blank" rel="noopener noreferrer" className="btn-rede instagram">
+                        <img src="/instagram.png" alt="Instagram" />
+                      </a>
+                      <a href={integrante.github} target="_blank" rel="noopener noreferrer" className="btn-rede github">
+                        <img src="/github.png" alt="GitHub" />
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <button className="seta-direita" onClick={proximoIntegrante}>❯</button>
+          </div>
+        </div>
+      </div>
 
 
       <div id="contato"></div>
