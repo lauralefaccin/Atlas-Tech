@@ -1490,6 +1490,7 @@ nav a:hover {
   align-items: center;
   justify-content: center;
   border-radius: 20px 20px 0 0;
+}
 
 /* Fallback quando não há imagem */
 .modal-slide-fallback {
