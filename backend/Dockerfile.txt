@@ -1,0 +1,25 @@
+# --- Estágio 1: Build do código ---
+FROM node:20-alpine AS build
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+# Executa o build (necessário se usar TypeScript/NestJS, gera a pasta dist)
+RUN npm run build
+
+# --- Estágio 2: Execução em Produção ---
+FROM node:20-alpine AS production
+WORKDIR /app
+
+COPY package*.json ./
+# Instala APENAS as dependências de produção (ignora devDependencies)
+RUN npm ci --only=production
+
+# Copia o build do estágio anterior e os arquivos necessários
+COPY --from=build /app/dist ./dist
+
+EXPOSE 3000
+CMD ["node", "dist/main.js"] 
+# (Ajuste o "dist/main.js" para o arquivo inicial do seu build, ex: dist/index.js ou dist/server.js)
